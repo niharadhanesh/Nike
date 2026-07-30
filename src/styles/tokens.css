@@ -1,0 +1,59 @@
+/* ============================================================
+   DESIGN TOKENS — "STRIDE" (sport / motion brand direction)
+
+   Palette:
+   --bg-fog     #eef0ec  cool off-white (not the cream-cliché)
+   --ink        #14181a  near-black text
+   --signal     #ff4423  signal red — the one accent, used sparingly
+   --steel      #2f3b52  cool steel blue — secondary/structure
+   --line       #cfd2c9  hairline / divider grey
+
+   Type:
+   --font-display : condensed, heavy, uppercase — headlines, numerals
+   --font-body    : clean grotesk — paragraphs, labels
+   --font-mono    : utility mono — captions, stats, tiny labels
+
+   Signature element: the hero's scroll-scrubbed slide sequence
+   (see Hero.jsx / useScrollSlides.js) — scroll position drives
+   which product slide shows and how far into the crossfade to
+   the next one, like flipping through a flipbook.
+   ============================================================ */
+
+:root {
+  --bg-fog: #eef0ec;
+  --ink: #14181a;
+  --signal: #ff4423;
+  --steel: #2f3b52;
+  --line: #cfd2c9;
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Work Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --container: 1240px;
+  --gutter: clamp(20px, 5vw, 64px);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg-fog);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
