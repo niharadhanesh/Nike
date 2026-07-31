@@ -6,187 +6,337 @@
   background: var(--ink);
 }
 
+
+/* Every slide sits on top of each other */
 .hero__slide {
   position: absolute;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: clamp(2rem, 6vw, 5rem);
-  max-width: var(--container);
-  margin: 0 auto;
+
   padding: 0 var(--gutter);
+
   color: var(--bg-fog);
+
+  /* IMPORTANT */
+  opacity: 1;
+  visibility: visible;
 }
 
+
+/* alternating slides */
 .hero__slide--reverse {
   flex-direction: row-reverse;
 }
 
-/* ---------- Intro slide (full-bleed image) ---------- */
+
+/* ================= INTRO ================= */
+
 
 .hero__slide--intro {
-  padding: 0;
-  max-width: none;
-  display: block;
+
+  padding:0;
+  display:block;
+
+  max-width:none;
+
 }
+
 
 .hero__image--intro {
-  position: absolute;
-  inset: 0;
-  width: 1600px;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
 }
+
 
 .hero__scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
     180deg,
-    rgba(20, 24, 26, 0.55) 0%,
-    rgba(20, 24, 26, 0.1) 45%,
-    rgba(20, 24, 26, 0.65) 100%
+    rgba(20,24,26,.55),
+    rgba(20,24,26,.15) 45%,
+    rgba(20,24,26,.7)
   );
+
 }
+
 
 .hero__intro-text {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  position:relative;
+
+  z-index:2;
+
+  height:100%;
+
+  max-width:var(--container);
+
+  margin:auto;
+
+  padding:0 var(--gutter);
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
 }
 
-/* ---------- Shoe slides ---------- */
+
+
+/* ================= TEXT ================= */
+
 
 .hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 34ch;
-  flex: 1 1 40%;
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:34ch;
+
+  flex:1;
+
 }
+
 
 .hero__eyebrow {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  color: var(--signal);
-  margin-bottom: 1.2rem;
+
+  display:block;
+
+  font-family:var(--font-mono);
+
+  font-size:.8rem;
+
+  letter-spacing:.18em;
+
+  color:var(--signal);
+
+  margin-bottom:1.2rem;
+
 }
+
+
 
 .hero__headline {
-  font-family: var(--font-display);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(2.2rem, 6vw, 4.2rem);
-  line-height: 0.95;
-  margin: 0;
-  letter-spacing: -0.01em;
+
+  font-family:var(--font-display);
+
+  font-weight:400;
+
+  text-transform:uppercase;
+
+  font-size:clamp(2.2rem,6vw,4.2rem);
+
+  line-height:.95;
+
+  margin:0;
+
 }
+
+
 
 .hero__sub {
-  margin-top: 1.4rem;
-  font-size: 1.05rem;
-  line-height: 1.5;
-  color: rgba(238, 240, 236, 0.8);
+
+  margin-top:1.4rem;
+
+  font-size:1.05rem;
+
+  line-height:1.5;
+
+  color:rgba(238,240,236,.8);
+
 }
+
+
 
 .hero__price {
-  display: inline-block;
-  margin-top: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  color: var(--bg-fog);
-  border-top: 1px solid rgba(238, 240, 236, 0.3);
-  padding-top: 0.75rem;
+
+  display:inline-block;
+
+  margin-top:1.5rem;
+
+  font-family:var(--font-mono);
+
+  color:var(--bg-fog);
+
+  border-top:1px solid rgba(238,240,236,.3);
+
+  padding-top:.75rem;
+
 }
+
+
+
+/* ================= IMAGE CARDS ================= */
+
 
 .hero__image {
-  position: relative;
-  z-index: 2;
-  flex: 1 1 50%;
-  height: 70%;
-  max-height: 480px;
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--steel);
+
+  position:relative;
+
+  z-index:2;
+
+  flex:1;
+
+  height:70%;
+
+  max-height:480px;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  background:var(--steel);
+
 }
+
+
 
 .hero__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
 }
 
-/* ---------- Scroll cue ---------- */
+
+
+/* ================= SCROLL ================= */
+
 
 .hero__scroll-cue {
-  position: absolute;
-  bottom: 2.5rem;
-  left: var(--gutter);
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: rgba(238, 240, 236, 0.7);
+
+  position:absolute;
+
+  bottom:2.5rem;
+
+  left:var(--gutter);
+
+  z-index:10;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:.75rem;
+
+  font-family:var(--font-mono);
+
+  font-size:.7rem;
+
+  letter-spacing:.2em;
+
+  color:rgba(238,240,236,.7);
+
 }
+
+
 
 .hero__scroll-cue span {
-  width: 1px;
-  height: 32px;
-  background: var(--signal);
-  display: block;
-  animation: hero-cue 1.8s var(--ease-out) infinite;
-  transform-origin: top;
+
+  width:1px;
+
+  height:32px;
+
+  background:var(--signal);
+
+  display:block;
+
+  animation:hero-cue 1.8s infinite;
+
 }
+
+
 
 @keyframes hero-cue {
-  0% {
-    transform: scaleY(0);
-    opacity: 0;
+
+  0%{
+    transform:scaleY(0);
+    opacity:0;
   }
-  40% {
-    transform: scaleY(1);
-    opacity: 1;
+
+  40%{
+    transform:scaleY(1);
+    opacity:1;
   }
-  100% {
-    transform: scaleY(1);
-    opacity: 0;
+
+  100%{
+    opacity:0;
   }
+
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero__scroll-cue span {
-    animation: none;
-    transform: scaleY(1);
-    opacity: 0.6;
-  }
+
+
+/* ================= MOBILE ================= */
+
+
+@media(max-width:720px){
+
+.hero__slide,
+.hero__slide--reverse{
+
+ flex-direction:column-reverse;
+
+ justify-content:center;
+
+ text-align:center;
+
+ gap:1.5rem;
+
 }
 
-@media (max-width: 720px) {
-  .hero__slide,
-  .hero__slide--reverse {
-    flex-direction: column-reverse;
-    justify-content: center;
-    text-align: center;
-    gap: 1.5rem;
-  }
-  .hero__content {
-    max-width: 90%;
-  }
-  .hero__image {
-    width: 100%;
-    height: 40vh;
-  }
+
+.hero__content{
+
+ max-width:90%;
+
+}
+
+
+.hero__image{
+
+ width:100%;
+
+ height:40vh;
+
+}
+
+
+.hero__intro-text{
+
+ padding:0 24px;
+
+}
+
+
 }
