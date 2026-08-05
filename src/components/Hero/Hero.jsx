@@ -8,36 +8,44 @@ const SLIDES = [
     name: "Stride Runner Low",
     price: "$140",
     tagline: "Move before you think.",
-    image: "/images/runner-low.jpg",
+    image: "/images/hero1.png",
   },
   {
     eyebrow: "02 — TRACK SPIKE",
     name: "Stride Track Spike",
     price: "$120",
     tagline: "Built for the gun.",
-    image: "/images/track-spike.jpg",
+    image: "/images/hero2.png",
   },
   {
     eyebrow: "03 — TRAIL PRO",
     name: "Stride Trail Pro",
     price: "$175",
     tagline: "Every surface, one grip.",
-    image: "/images/trail-pro.jpg",
+    image: "/images/hero3.png",
   },
   {
     eyebrow: "04 — COURT FLEX",
     name: "Stride Court Flex",
     price: "$130",
     tagline: "Cut. Plant. Go.",
-    image: "/images/court-flex.jpg",
+    image: "/images/hero4.png",
   },
 ];
 
 const INTRO = {
   eyebrow: "STRIDE — FW26",
   headline: "Every step, tracked.",
-  image: "/images/hero-intro.jpg",
+  typing: "Real-time pace, distance, and form — on your wrist.",
+  image: "/images/hero.avif",
 };
+
+function formatHeadline(name) {
+  const words = name.split(" ");
+  if (words.length < 2) return name;
+  const [first, second, ...rest] = words;
+  return `${first}\u00A0${second}${rest.length ? " " + rest.join(" ") : ""}`;
+}
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -64,6 +72,13 @@ export default function Hero() {
         ref={addSlideRef}
         className="hero__slide hero__slide--intro active"
       >
+        <img
+          src={INTRO.image}
+          alt=""
+          aria-hidden="true"
+          className="hero__image--intro-bg"
+        />
+
         <img
           src={INTRO.image}
           alt={INTRO.headline}
@@ -97,7 +112,7 @@ export default function Hero() {
             </span>
 
             <h1 className="hero__headline">
-              {slide.name}
+              {formatHeadline(slide.name)}
             </h1>
 
             <p className="hero__sub">

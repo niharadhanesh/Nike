@@ -3,12 +3,14 @@
  * product graphic for each hero slide. Not a trace of any real
  * shoe or logo — swap for actual product photography per slide.
  */
-export default function ShoeMark({ color = "currentColor" }) {
+export default function ShoeMark({ color = "currentColor", className = "" }) {
   return (
     <svg
       viewBox="0 0 240 120"
-      width="220"
-      height="110"
+      preserveAspectRatio="xMidYMid meet"
+      width="100%"
+      height="100%"
+      className={`shoe-mark ${className}`}
       aria-hidden="true"
       focusable="false"
     >

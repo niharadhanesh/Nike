@@ -10,7 +10,7 @@ export default function Stats() {
   return (
     <div className="stats">
       {STATS.map((stat, i) => (
-        <Reveal key={stat.label} delay={i * 100}>
+        <Reveal key={stat.label} delay={i * 100} className="stat">
           <div className="stat__value">{stat.value}</div>
           <div className="stat__label">{stat.label}</div>
         </Reveal>
