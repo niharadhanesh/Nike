@@ -43,6 +43,20 @@ const PRODUCTS = [
     image:
       "https://images.unsplash.com/photo-1567069041071-bab3e18d72f0?auto=format&fit=crop&w=800&q=80&crop=entropy",
   },
+    {
+    name: "Stride Sprint Elite",
+    price: "$150",
+    tag: "New",
+    image:
+      "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    name: "Stride Urban Max",
+    price: "$145",
+    tag: "Popular",
+    image:
+      "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 export default function ProductGrid() {
